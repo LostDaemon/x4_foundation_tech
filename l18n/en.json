@@ -1,0 +1,33 @@
+{
+	"localization":[
+		{"id":"energy_cells","value":"Energy cells"},
+		{"id":"ore","value":"Ore"},
+		{"id":"silicon","value":"Silicon"},
+		{"id":"ice","value":"Ice"},
+		{"id":"helium","value":"Helium"},
+		{"id":"methane","value":"Methane"},
+		{"id":"hydrogen","value":"Hydrogen"},
+		{"id":"refined_metals",	"value":"Refined metals"},
+		{"id":"silicon_wafers",	"value":"Silicon wafers"},
+		{"id":"water","value":"Water"},
+		{"id":"graphene","value":"Graphene"},
+		{"id":"superfluid_coolant","value":"Superfluid coolant"},
+		{"id":"antimater_cells","value":"Antimater cells"},
+		{"id":"plasma_conductors", "value":"Plasma conductors"},
+		{"id":"engine_parts", "value":"Engine parts"},
+		{"id":"hull_parts", "value":"Hull parts"},
+		{"id":"microchips", "value":"Microchips"},
+		{"id":"scanning_arrays", "value":"Scanning arrays"},
+		{"id":"advanced_composites", "value":"Advanced composites"},
+		{"id":"quantum_tubes", "value":"Quantum tubes"},
+		{"id":"advanced_electronics", "value":"Advanced electronics"},
+		{"id":"antimater_converters", "value":"Antimater converters"},
+		{"id":"claytronics", "value":"Claytronics"},
+		{"id":"weapon_components", "value":"Weapon components"},
+		{"id":"missile_components", "value":"Missile components"},
+		{"id":"turret_components", "value":"Turret components"},
+		{"id":"shield_components", "value":"Shield components"},
+		{"id":"field_coils", "value":"Field coils"},
+		{"id":"drone_components", "value":"Drone components"}
+	]
+}

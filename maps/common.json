@@ -1,0 +1,327 @@
+{
+	"products":[
+		{
+			"id":"ore",
+			"tier" : 0,
+			"precursors": [],
+			"color":"#964B00",
+			"faction": "common",
+			"container":"solid"
+		},
+		{
+			"id":"silicon",
+			"tier" : 0,
+			"precursors": [],
+			"color":"#D0B49F",
+			"faction": "common",
+			"container":"solid"
+		},
+		{
+			"id":"methane",
+			"tier" : 0,
+			"precursors": [],
+			"color":"#9DB6CC",
+			"faction": "common",
+			"container":"liquid"
+		},
+		{
+			"id":"helium",
+			"tier" : 0,
+			"precursors": [],
+			"color":"#9DB6CC",
+			"faction": "common",
+			"container":"liquid"
+		},
+		{
+			"id":"hydrogen",
+			"tier" : 0,
+			"precursors": [],
+			"color":"#9DB6CC",
+			"faction": "common",
+			"container":"liquid"
+		},
+		{
+			"id":"energy_cells",
+			"tier" : 0,
+			"precursors": [],
+			"color":"#D1D100",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":175,
+			"cycleDuration": 60
+		},
+		{
+			"id":"refined_metals",
+			"tier" : 1,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":90},
+				{"id":"ore", "cycleConsumption":240}],
+			"color":"#F27900",
+			"faction": "common",
+			"cycleProduction":88,
+			"cycleDuration": 150,
+			"container":"container"
+		},
+		{
+			"id":"silicon_wafers",
+			"tier" : 1,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":90},
+				{"id":"silicon", "cycleConsumption":240}],
+			"color":"#7C3600",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":107,
+			"cycleDuration": 180
+		},
+		{
+			"id":"graphene",
+			"tier" : 1,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":80},
+				{"id":"methane", "cycleConsumption":320}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":96,
+			"cycleDuration": 240
+		},
+		{
+			"id":"superfluid_coolant",
+			"tier" : 1,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":60},
+				{"id":"helium", "cycleConsumption":320}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":95,
+			"cycleDuration": 240
+		},
+		{
+			"id":"antimater_cells",
+			"tier" : 1,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":100},
+				{"id":"hydrogen", "cycleConsumption":320}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":99,
+			"cycleDuration": 120
+		},
+		{
+			"id":"scanning_arrays",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":60},
+				{"id":"refined_metals", "cycleConsumption":100},
+				{"id":"silicon_wafers", "cycleConsumption":60}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":36,
+			"cycleDuration": 600
+		},
+		{
+			"id":"microchips",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":50},
+				{"id":"silicon_wafers", "cycleConsumption":200}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":72,
+			"cycleDuration": 600
+		},
+		{
+			"id":"advanced_composites",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":50},
+				{"id":"refined_metals", "cycleConsumption":80},
+				{"id":"graphene", "cycleConsumption":80}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":54,
+			"cycleDuration": 300
+		},
+		{
+			"id":"hull_parts",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":80},
+				{"id":"refined_metals", "cycleConsumption":280},
+				{"id":"graphene", "cycleConsumption":40}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":294,
+			"cycleDuration": 900
+		},
+		{
+			"id":"plasma_conductors",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":60},
+				{"id":"graphene", "cycleConsumption":96},
+				{"id":"superfluid_coolant", "cycleConsumption":140}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":44,
+			"cycleDuration": 900
+		},
+		{
+			"id":"quantum_tubes",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":40},
+				{"id":"superfluid_coolant", "cycleConsumption":30},
+				{"id":"graphene", "cycleConsumption":116}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":94,
+			"cycleDuration": 720
+		},
+		{
+			"id":"engine_parts",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":60},
+				{"id":"refined_metals", "cycleConsumption":96},
+				{"id":"antimater_cells", "cycleConsumption":80}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":208,
+			"cycleDuration": 900
+		},
+		{
+			"id":"advanced_electronics",
+			"tier" : 3,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":60},
+				{"id":"quantum_tubes", "cycleConsumption":20},
+				{"id":"microchips", "cycleConsumption":44}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":54,
+			"cycleDuration": 720
+		},
+		{
+			"id":"antimater_converters",
+			"tier" : 3,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":80},
+				{"id":"advanced_composites", "cycleConsumption":20},
+				{"id":"microchips", "cycleConsumption":30}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":133,
+			"cycleDuration": 300
+		},
+		{
+			"id":"claytronics",
+			"tier" : 3,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":140},
+				{"id":"antimater_cells", "cycleConsumption":100},
+				{"id":"microchips", "cycleConsumption":160},
+				{"id":"quantum_tubes", "cycleConsumption":100}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":108,
+			"cycleDuration": 900
+		},
+		{
+			"id":"weapon_components",
+			"tier" : 3,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":60},
+				{"id":"hull_parts", "cycleConsumption":20},
+				{"id":"plasma_conductors", "cycleConsumption":30}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":170,
+			"cycleDuration": 1800
+		},
+		{
+			"id":"missile_components",
+			"tier" : 3,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":20},
+				{"id":"hull_parts", "cycleConsumption":2},
+				{"id":"advanced_composites", "cycleConsumption":2}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":281,
+			"cycleDuration": 900
+		},
+		{
+			"id":"turret_components",
+			"tier" : 3,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":60},
+				{"id":"microchips", "cycleConsumption":20},
+				{"id":"scanning_arrays", "cycleConsumption":10},
+				{"id":"quantum_tubes", "cycleConsumption":20}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":170,
+			"cycleDuration": 1800
+		},
+		{
+			"id":"shield_components",
+			"tier" : 3,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":70},
+				{"id":"plasma_conductors", "cycleConsumption":20},
+				{"id":"quantum_tubes", "cycleConsumption":20}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":193,
+			"cycleDuration": 1200
+		},
+		{
+			"id":"field_coils",
+			"tier" : 3,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":60},
+				{"id":"plasma_conductors", "cycleConsumption":40},
+				{"id":"quantum_tubes", "cycleConsumption":43}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":175,
+			"cycleDuration": 600
+		},
+		{
+			"id":"drone_components",
+			"tier" : 3,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":60},
+				{"id":"microchips", "cycleConsumption":20},
+				{"id":"scanning_arrays", "cycleConsumption":40},
+				{"id":"hull_parts", "cycleConsumption":20},
+				{"id":"engine_parts", "cycleConsumption":20}],
+			"color":"#366BA1",
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":105,
+			"cycleDuration": 1200
+		}
+
+
+	]
+}

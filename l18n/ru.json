@@ -1,0 +1,33 @@
+{
+	"localization":[
+		{"id":"energy_cells","value":"Энергоэлементы"},
+		{"id":"ore","value":"Руда"},
+		{"id":"silicon","value":"Кремний"},
+		{"id":"ice","value":"Лёд"},
+		{"id":"helium","value":"Гелий"},
+		{"id":"methane","value":"Метан"},
+		{"id":"hydrogen","value":"Водород"},
+		{"id":"refined_metals",	"value":"Очищенные металлы"},
+		{"id":"silicon_wafers",	"value":"Кремниевые пластины"},
+		{"id":"water","value":"Вода"},
+		{"id":"graphene","value":"Графен"},
+		{"id":"superfluid_coolant","value":"Сверхтекучий хладагент"},
+		{"id":"antimater_cells","value":"АМ-элементы"},
+		{"id":"plasma_conductors", "value":"Плазмопроводы"},
+		{"id":"engine_parts", "value":"Детали двигателей"},
+		{"id":"hull_parts", "value":"Детали корпуса"},
+		{"id":"microchips", "value":"Микросхемы"},
+		{"id":"scanning_arrays", "value":"Сканирующие матрицы"},
+		{"id":"advanced_composites", "value":"Суперкомпозиты"},
+		{"id":"quantum_tubes", "value":"Квантовые трубки"},
+		{"id":"advanced_electronics", "value":"Системы упреждения"},
+		{"id":"antimater_converters", "value":"АМ-конвертеры"},
+		{"id":"claytronics", "value":"Клэйтроника"},
+		{"id":"weapon_components", "value":"Компоненты орудий"},
+		{"id":"missile_components", "value":"Компоненты ракет"},
+		{"id":"turret_components", "value":"Компоненты туррелей"},
+		{"id":"shield_components", "value":"Компоненты щитов"},
+		{"id":"field_coils", "value":"Полевые катушки"},
+		{"id":"drone_components", "value":"Компоненты дронов"}
+	]
+}
