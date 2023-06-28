@@ -108,7 +108,7 @@ function toggleLocale()
 
 function updateProductInfo(productId)
 {
-	let dropdownBtn = document.getElementById('dropdown');
+	let dropdownBtn = document.getElementById('dropdown_btn');
 	let product = allProducts.find(c=>c.id == productId);
 	if(product) 
 	{
