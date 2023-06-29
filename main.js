@@ -82,8 +82,6 @@ function colorizeProducts(products)
 {
 	for(let i=0; i<products.length; i++)
 	{
-		console.log(colors.length);
-
 		if(i>colors.length)
 		{
 			products[i].color = "#ffffff";

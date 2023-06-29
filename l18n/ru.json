@@ -28,6 +28,31 @@
 		{"id":"turret_components", "value":"Компоненты туррелей"},
 		{"id":"shield_components", "value":"Компоненты щитов"},
 		{"id":"field_coils", "value":"Полевые катушки"},
-		{"id":"drone_components", "value":"Компоненты дронов"}
+		{"id":"drone_components", "value":"Компоненты дронов"},
+		{"id":"meat", "value":"Мясо (Арг)"},
+		{"id":"wheat", "value":"Пшеница (Арг)"},
+		{"id":"food_rations_argon", "value":"Рационы питания (Арг)"},
+		{"id":"medical_supplies_argon", "value":"Медикаменты (Арг)"},
+		{"id":"spacefuel", "value":"Космотопливо (Арг)"},
+		{"id":"spices", "value":"Специи"},
+		{"id":"sunrise_flowers", "value":"Подсолнечники"},
+		{"id":"swamp_plant", "value":"Болотная трава"},
+		{"id":"nostorop_oil", "value":"Ностороповое масло"},
+		{"id":"spaceweed", "value":"Космотабак"},
+		{"id":"teladinium", "value":"Теладиний"},
+		{"id":"medical_supplies_teladi", "value":"Медикаменты (Тел)"},
+		{"id":"hull_parts_teladi", "value":"Детали корпуса (Тел)"},
+		{"id":"engine_parts_teladi", "value":"Детали двигателей (Тел)"},
+		{"id":"advanced_composites_teladi", "value":"Суперкомпозиты (Тел)"},
+		{"id":"scanning_arrays_teladi", "value":"Сканирующие матрицы (Тел)"},
+		{"id":"maja_snails", "value":"Улитки майя (Пар)"},
+		{"id":"maja_dust", "value":"Порошок майя (Пар)"},
+		{"id":"soja_beans", "value":"Соевые бобы (Пар)"},
+		{"id":"soja_husk", "value":"Соевая паста (Пар)"},
+		{"id":"medical_supplies_paranid", "value":"Медикаменты (Пар)"},
+		{"id":"сhelt_meat", "value":"Мясо челтов (Спл)"},
+		{"id":"scruffin_fruit", "value":"Скруффины (Спл)"},
+		{"id":"medical_supplies_split", "value":"Медикаменты (Спл)"}
 	]
 }
+ 

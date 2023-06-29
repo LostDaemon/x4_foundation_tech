@@ -45,6 +45,13 @@
 			"cycleDuration": 60
 		},
 		{
+			"id":"ice",
+			"tier" : 0,
+			"precursors": [],
+			"faction": "common",
+			"container":"container"
+		},
+		{
 			"id":"refined_metals",
 			"tier" : 1,
 			"precursors": [
@@ -97,6 +104,17 @@
 			"faction": "common",
 			"container":"container",
 			"cycleProduction":99,
+			"cycleDuration": 120
+		},		
+		{
+			"id":"water",
+			"tier" : 1,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":60},
+				{"id":"ice", "cycleConsumption":320}],
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":193,
 			"cycleDuration": 120
 		},
 		{
@@ -293,8 +311,275 @@
 			"container":"container",
 			"cycleProduction":105,
 			"cycleDuration": 1200
+		},
+		{
+			"id":"spices",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":40},
+			{"id":"water", "cycleConsumption":80}],
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":500,
+			"cycleDuration": 600
+		},
+		{
+			"id":"meat",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":80},
+			{"id":"water", "cycleConsumption":100}],
+			"faction": "argon",
+			"container":"container",
+			"cycleProduction":290,
+			"cycleDuration": 450
+		},
+		{
+			"id":"wheat",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":60},
+			{"id":"water", "cycleConsumption":80}],
+			"faction": "argon",
+			"container":"container",
+			"cycleProduction":310,
+			"cycleDuration": 300
+		},
+		{
+			"id":"food_rations_argon",
+			"tier" : 3,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":60},
+			{"id":"meat_argon", "cycleConsumption":40},
+			{"id":"spices", "cycleConsumption":40},
+			{"id":"wheat_argon", "cycleConsumption":40}],
+			"faction": "argon",
+			"container":"container",
+			"cycleProduction":460,
+			"cycleDuration": 240
+		},
+		{
+			"id":"medical_supplies_argon",
+			"tier" : 3,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":100},
+			{"id":"water", "cycleConsumption":60},
+			{"id":"spices", "cycleConsumption":40},
+			{"id":"wheat_argon", "cycleConsumption":30}],
+			"faction": "argon",
+			"container":"container",
+			"cycleProduction":208,
+			"cycleDuration": 300
+		},
+		{
+			"id":"spacefuel",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":40},
+			{"id":"water", "cycleConsumption":100},
+			{"id":"wheat_argon", "cycleConsumption":80}],
+			"faction": "argon",
+			"container":"container",
+			"cycleProduction":98,
+			"cycleDuration": 480
+		},
+		{
+			"id":"sunrise_flowers",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":30},
+			{"id":"water", "cycleConsumption":80}],
+			"faction": "teladi",
+			"container":"container",
+			"cycleProduction":100,
+			"cycleDuration": 300
+		},
+		{
+			"id":"swamp_plant",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":40},
+			{"id":"water", "cycleConsumption":120}],
+			"faction": "teladi",
+			"container":"container",
+			"cycleProduction":120,
+			"cycleDuration": 450
+		},
+		{
+			"id":"nostorop_oil",
+			"tier" : 3,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":100},
+			{"id":"sunrise_flowers", "cycleConsumption":40},
+			{"id":"spices", "cycleConsumption":40},
+			{"id":"water", "cycleConsumption":60}],
+			"faction": "teladi",
+			"container":"container",
+			"cycleProduction":500,
+			"cycleDuration": 300
+		},
+		{
+			"id":"spaceweed",
+			"tier" : 3,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":140},
+			{"id":"spices", "cycleConsumption":40},
+			{"id":"swamp_plant", "cycleConsumption":120}],
+			"faction": "teladi",
+			"container":"container",
+			"cycleProduction":183,
+			"cycleDuration": 600
+		},
+		{
+			"id":"teladinium",
+			"tier" : 1,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":45},
+			{"id":"ore", "cycleConsumption":280}],
+			"faction": "teladi",
+			"container":"container",
+			"cycleProduction":70,
+			"cycleDuration": 120
+		},
+		{
+			"id":"medical_supplies_teladi",
+			"tier" : 3,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":100},
+			{"id":"water", "cycleConsumption":60},
+			{"id":"spices", "cycleConsumption":40},
+			{"id":"sunrise_flowers", "cycleConsumption":12}],
+			"faction": "teladi",
+			"container":"container",
+			"cycleProduction":208,
+			"cycleDuration": 300
+		},
+		{
+			"id":"hull_parts_teladi",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":80},
+				{"id":"teladinium", "cycleConsumption":204},
+				{"id":"graphene", "cycleConsumption":40}],
+			"faction": "teladi",
+			"container":"container",
+			"cycleProduction":294,
+			"cycleDuration": 900
+		},
+		{
+			"id":"engine_parts_teladi",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":60},
+				{"id":"teladinium", "cycleConsumption":70},
+				{"id":"antimater_cells", "cycleConsumption":80}],
+			"faction": "teladi",
+			"container":"container",
+			"cycleProduction":208,
+			"cycleDuration": 900
+		},
+		{
+			"id":"advanced_composites_teladi",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":50},
+				{"id":"teladinium", "cycleConsumption":58},
+				{"id":"graphene", "cycleConsumption":80}],
+			"faction": "teladi",
+			"container":"container",
+			"cycleProduction":54,
+			"cycleDuration": 300
+		},
+		{
+			"id":"scanning_arrays_teladi",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":60},
+				{"id":"teladinium", "cycleConsumption":73},
+				{"id":"silicon_wafers", "cycleConsumption":60}],
+			"faction": "teladi",
+			"container":"container",
+			"cycleProduction":36,
+			"cycleDuration": 600
+		},
+		{
+			"id":"maja_snails",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":40},
+				{"id":"water", "cycleConsumption":100}],
+			"faction": "paranid",
+			"container":"container",
+			"cycleProduction":146,
+			"cycleDuration": 450
+		},
+		{
+			"id":"maja_dust",
+			"tier" : 3,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":40},
+				{"id":"maja_snails", "cycleConsumption":120},
+				{"id":"spices", "cycleConsumption":60}],
+			"faction": "paranid",
+			"container":"container",
+			"cycleProduction":64,
+			"cycleDuration": 600
+		},
+		{
+			"id":"soja_beans",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":30},
+				{"id":"water", "cycleConsumption":80}],
+			"faction": "paranid",
+			"container":"container",
+			"cycleProduction":104,
+			"cycleDuration": 300
+		},
+		{
+			"id":"soja_husk",
+			"tier" : 3,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":80},
+				{"id":"maja_snails", "cycleConsumption":50},
+				{"id":"soja_beans", "cycleConsumption":40},
+				{"id":"spices", "cycleConsumption":20}],
+			"faction": "paranid",
+			"container":"container",
+			"cycleProduction":350,
+			"cycleDuration": 300
+		},
+		{
+			"id":"medical_supplies_paranid",
+			"tier" : 3,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":100},
+			{"id":"water", "cycleConsumption":60},
+			{"id":"spices", "cycleConsumption":40},
+			{"id":"soja_beans", "cycleConsumption":10}],
+			"faction": "teladi",
+			"container":"container",
+			"cycleProduction":208,
+			"cycleDuration": 300
+		},
+		{
+			"id":"сhelt_meat",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":50},
+			{"id":"water", "cycleConsumption":120}],
+			"faction": "split",
+			"container":"container",
+			"cycleProduction":209,
+			"cycleDuration": 450
+		},
+		{
+			"id":"scruffin_fruit",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":30},
+			{"id":"water", "cycleConsumption":80}],
+			"faction": "split",
+			"container":"container",
+			"cycleProduction":255,
+			"cycleDuration": 300
+		},
+		{
+			"id":"medical_supplies_split",
+			"tier" : 3,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":100},
+			{"id":"water", "cycleConsumption":60},
+			{"id":"spices", "cycleConsumption":60},
+			{"id":"scruffin_fruit", "cycleConsumption":30}],
+			"faction": "teladi",
+			"container":"container",
+			"cycleProduction":208,
+			"cycleDuration": 300
 		}
-
-
 	]
 }
