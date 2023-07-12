@@ -61,7 +61,22 @@
 		{"id":"computronic_substrate", "value":"Computronic Substrate"},
 		{"id":"silicon_carbide", "value":"Silicon Carbide"},
 		{"id":"food_rations_terrain", "value":"Food Rations (Ter)"},
-		{"id":"medical_supplies_terrain", "value":"Medical Supplies (Ter)"}
+		{"id":"medical_supplies_terrain", "value":"Medical Supplies (Ter)"},
+
+		{"id":"faction", "value":"Faction"},
+		{"id":"argon", "value":"Argon"},
+		{"id":"teladi", "value":"Teladi"},
+		{"id":"paranid", "value":"Paranid"},
+		{"id":"split", "value":"Split"},
+		{"id":"terran", "value":"Terran"},
+		{"id":"boron", "value":"Boron"},
+		{"id":"common", "value":"Common"},
+
+		{"id":"consumption_label", "value":"Consumption:"},
+		{"id":"production_label", "value":"Production:"},
+		{"id":"per_cycle", "value":"per cycle"},
+		{"id":"per_hour", "value":"per hour"},
+		{"id":"cycle_duration", "value":"Cycle duration"}
 	]
 }
 

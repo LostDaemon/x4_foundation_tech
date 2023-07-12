@@ -11,7 +11,7 @@ let context = canvas.getContext('2d');
 let canvasContainer = document.getElementById('canvas_container'); 
 
 const canvasWidth = 1280;
-const canvasHeight = 600;
+const canvasHeight = 500;
 
 let dpr = window.devicePixelRatio;
 canvas.width = canvasWidth;
@@ -127,12 +127,51 @@ function toggleLocale()
 
 function updateProductInfo(productId)
 {
-	let dropdownBtn = document.getElementById('dropdown_btn');
+	const dropdownBtn = document.getElementById('dropdown_btn');
+	const product_label = document.getElementById('product_label');
+	const consumption_label = document.getElementById('consumption_label');
+	const production_label = document.getElementById('production_label');
+	const consumption_list = document.getElementById('consumption_list');
+	const production_list = document.getElementById('production_list');
+
 	let product = allProducts.find(c=>c.id == productId);
 	if(product) 
 	{
 		dropdownBtn.innerText = getLocale(product.id)
+		product_label.innerText = getLocale(product.id);
+		consumption_label.innerText = getLocale("consumption_label");
+		production_label.innerText = getLocale("production_label");
+
+		
+		let consumptionInnerHtml = "";
+		let cyclesPerHour = product.cycleDuration ? 3600/product.cycleDuration : 0;
+		if(product.precursors)
+		{
+		product.precursors.forEach(p=>{
+			consumptionInnerHtml = consumptionInnerHtml +"<li><b>"+getLocale(p.id)+"</b>: <font style='color:yellow'>"+ p.cycleConsumption +"</font> "+getLocale("per_cycle")+" (<font style='color:yellow'>"+p.cycleConsumption*cyclesPerHour+"</font> "+getLocale("per_hour")+")</li>" + "\n";
+		});
+		consumption_list.innerHTML = consumptionInnerHtml;
+		}
+		
+		let productionInnerHtml = "<li><b>"+getLocale(product.id)+"</b></li>";
+
+
+		if(product.cycleProduction)
+		{
+			productionInnerHtml = "<li><b>"+getLocale(product.id)+"</b>: <font style='color:yellow'>"+ product.cycleProduction +"</font> "+getLocale("per_cycle")+" (<font style='color:yellow'>"+product.cycleProduction*cyclesPerHour+"</font> "+getLocale("per_hour")+")</li>" + "\n";
+			let mm = Math.floor(product.cycleDuration / 60);
+			let ss = ("0" + product.cycleDuration % 60).slice(-2);
+			productionInnerHtml = productionInnerHtml + "<li><b>"+getLocale("cycle_duration")+"</b>: <font style='color:yellow'>"+ mm + ":" + ss +"</font></li>" + "\n";
+		} 
+
+		let faction = getLocale(product.faction ? product.faction : 'common'); 
+
+		productionInnerHtml = productionInnerHtml + "<li><b>"+getLocale("faction")+"</b>: <font style='color:yellow'>"+ faction +"</font></li>" + "\n";
+		production_list.innerHTML = productionInnerHtml;
 	}
+
+	
+
 }
 
 function updateUrl(productId)
