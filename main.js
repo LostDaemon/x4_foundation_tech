@@ -36,20 +36,21 @@ let selectedProductId = null;
 let locale = "en";
 let l18n = [];
 let needRedraw = false;
-loadL18n(locale).then(response => {
-	l18n = response;
- });
-
 let productsToRender = [];
 let allProducts = [];
-loadProductsMap('./maps/common.json')
-.then(response => { 
+
+loadL18n(locale)
+.then(response => {
+	l18n = response;
+ 	loadProductsMap('./maps/common.json')
+	.then(response => { 
 	allProducts = response;
 	if(allProducts && allProducts.length > 0)
 	{
 		showProduct(urlProduct ?? allProducts[0].id);
 		updateProductList(null);
 	}
+   });
 });
 
 function loadColors()
