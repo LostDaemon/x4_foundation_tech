@@ -1,0 +1,5 @@
+# Blocks robots from specific folders / directories
+User-agent: *
+Disallow: /l18n/
+Disallow: /maps/
+Disallow: /.github/
