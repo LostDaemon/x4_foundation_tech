@@ -1,4 +1,9 @@
 window.requestAnimFrame=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(a){window.setTimeout(a,1E3/60)}}();
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const urlProduct = urlParams.get('product')
+
 const bgColor = '#222222';
 
 let canvas = document.getElementById('canvas');
@@ -42,7 +47,7 @@ loadProductsMap('./maps/common.json')
 	allProducts = response;
 	if(allProducts && allProducts.length > 0)
 	{
-		showProduct(allProducts[0].id);
+		showProduct(urlProduct ?? allProducts[0].id);
 		updateProductList();
 	}
 });
