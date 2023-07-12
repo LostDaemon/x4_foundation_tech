@@ -48,7 +48,7 @@ loadProductsMap('./maps/common.json')
 	if(allProducts && allProducts.length > 0)
 	{
 		showProduct(urlProduct ?? allProducts[0].id);
-		updateProductList();
+		updateProductList(null);
 	}
 });
 
@@ -60,12 +60,23 @@ function loadColors()
 	.catch(error => console.warn(error));
 }
 
-function updateProductList()
+function onFilter()
+{
+	let filterInput = document.getElementById('filter');
+	let filter = filterInput.value;
+	updateProductList(filter);
+}
+
+function updateProductList(filter)
 {
 	let productListComponent = document.getElementById('products_list');
 	let innerHtml ="";
-	l18n = l18n.sort((a,b) => (a.value > b.value) ? 1 : ((b.value > a.value) ? -1 : 0))
-	l18n.forEach(c=>{
+    let filtered = filter ? 
+	l18n.filter(c=>c.value.toUpperCase().includes(filter.toUpperCase())) 
+	: l18n;
+
+	filtered = filtered.sort((a,b) => (a.value > b.value) ? 1 : ((b.value > a.value) ? -1 : 0))
+	filtered.forEach(c=>{
 		innerHtml = innerHtml +"<li><a href=\"#\" class=\"list-group-item list-group-item-action\" onclick=\"showProduct('"+c.id+"')\">"+c.value+"</a></li>" + "\n";
 	});
 
