@@ -580,6 +580,125 @@
 			"container":"container",
 			"cycleProduction":208,
 			"cycleDuration": 300
+		},
+		{
+			"id":"biogas",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":40},
+			{"id":"water", "cycleConsumption":100}],
+			"faction": "boron",
+			"container":"container",
+			"cycleProduction":110,
+			"cycleDuration": 150
+		},
+		{
+			"id":"plankton",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":20},
+			{"id":"water", "cycleConsumption":50}],
+			"faction": "boron",
+			"container":"container",
+			"cycleProduction":275,
+			"cycleDuration": 400
+		},
+		{
+			"id":"bofu",
+			"tier" : 3,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":40},
+			{"id":"plankton", "cycleConsumption":120},
+			{"id":"biogas", "cycleConsumption":40}],
+			"faction": "boron",
+			"container":"container",
+			"cycleProduction":82,
+			"cycleDuration": 240
+		},
+		{
+			"id":"medical_supplies_boron",
+			"tier" : 3,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":100},
+			{"id":"water", "cycleConsumption":60},
+			{"id":"plankton", "cycleConsumption":95}],
+			"faction": "boron",
+			"container":"container",
+			"cycleProduction":208,
+			"cycleDuration": 300
+		},
+		{
+			"id":"metallic_microlattice",
+			"tier" : 1,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":50},
+			{"id":"helium", "cycleConsumption":130},
+			{"id":"ore", "cycleConsumption":50}],
+			"faction": "terrain",
+			"container":"container",
+			"cycleProduction":190,
+			"cycleDuration": 180
+		},
+		{
+			"id":"protein_paste",
+			"tier" : 1,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":80},
+			{"id":"ice", "cycleConsumption":80},
+			{"id":"methane", "cycleConsumption":200}],
+			"faction": "terrain",
+			"container":"container",
+			"cycleProduction":219,
+			"cycleDuration": 300
+		},{
+			"id":"stimulators",
+			"tier" : 1,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":80},
+			{"id":"helium", "cycleConsumption":400},
+			{"id":"silicon", "cycleConsumption":20}],
+			"faction": "terrain",
+			"container":"container",
+			"cycleProduction":98,
+			"cycleDuration": 300
+		},
+		{
+			"id":"computronic_substrate",
+			"tier" : 1,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":4000},
+			{"id":"hydrogen", "cycleConsumption":2000},
+			{"id":"silicon", "cycleConsumption":3000},
+			{"id":"ore", "cycleConsumption":3000}],
+			"faction": "terrain",
+			"container":"container",
+			"cycleProduction":98,
+			"cycleDuration": 600
+		},
+		{
+			"id":"silicon_carbide",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":200},
+			{"id":"metallic_microlattice", "cycleConsumption":2},
+			{"id":"methane", "cycleConsumption":400},
+			{"id":"silicon", "cycleConsumption":300}],
+			"faction": "terrain",
+			"container":"container",
+			"cycleProduction":48,
+			"cycleDuration": 300
+		},
+		{
+			"id":"food_rations_terrain",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":60},
+			{"id":"protein_paste", "cycleConsumption":60}],
+			"faction": "terrain",
+			"container":"container",
+			"cycleProduction":175,
+			"cycleDuration": 240
+		},
+		{
+			"id":"medical_supplies_terrain",
+			"tier" : 2,
+			"precursors": [{"id":"energy_cells", "cycleConsumption":100},
+			{"id":"protein_paste", "cycleConsumption":24},
+			{"id":"ice", "cycleConsumption":50}],
+			"faction": "terrain",
+			"container":"container",
+			"cycleProduction":140,
+			"cycleDuration": 300
 		}
 	]
 }
