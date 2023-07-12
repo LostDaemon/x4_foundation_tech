@@ -63,10 +63,10 @@ function loadColors()
 function updateProductList()
 {
 	let productListComponent = document.getElementById('products_list');
-
 	let innerHtml ="";
-	allProducts.forEach(product=>{
-		innerHtml = innerHtml +"<li><a href=\"#\" class=\"list-group-item list-group-item-action\" onclick=\"showProduct('"+product.id+"')\">"+getLocale(product.id)+"</a></li>" + "\n";
+	l18n = l18n.sort((a,b) => (a.value > b.value) ? 1 : ((b.value > a.value) ? -1 : 0))
+	l18n.forEach(c=>{
+		innerHtml = innerHtml +"<li><a href=\"#\" class=\"list-group-item list-group-item-action\" onclick=\"showProduct('"+c.id+"')\">"+c.value+"</a></li>" + "\n";
 	});
 
 	productListComponent.innerHTML = innerHtml;
