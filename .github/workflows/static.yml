@@ -33,11 +33,24 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+        
+      - name: Create Publish Folder
+        run: |
+          mkdir publish 
+          cp -R l18n publish/l18n
+          cp -R maps publish/maps
+          cp colors.json publish/colors.json
+          cp favicon.ico publish/favicon.ico
+          cp index.html publish/index.html
+          cp main.js publish/main.js
+          cp robots.txt publish/robots.txt
+          cp styles.css publish/styles.css
+          
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
           # Upload entire repository
-          path: '.'
+          path: './publish'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
