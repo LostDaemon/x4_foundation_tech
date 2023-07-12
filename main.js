@@ -3,7 +3,7 @@ window.requestAnimFrame=function(){return window.requestAnimationFrame||window.w
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const urlProduct = urlParams.get('product')
-
+const baseUrl = location.protocol + '//' + location.host + location.pathname;
 const bgColor = '#222222';
 
 let canvas = document.getElementById('canvas');
@@ -84,7 +84,7 @@ function showProduct(productId)
 		productsToRender = flattenProducts(aligned);
 		colorizeProducts(productsToRender);
 		needRedraw = true;
-
+		updateUrl(productId);
 		updateProductInfo(productId);
 }
 
@@ -122,6 +122,13 @@ function updateProductInfo(productId)
 	{
 		dropdownBtn.innerText = getLocale(product.id)
 	}
+}
+
+function updateUrl(productId)
+{
+	let url = baseUrl + '?product=' + productId;
+
+	history.pushState(null, null, url);
 }
 
 // function getAncestorsToShow(productId)
