@@ -1,30 +1,33 @@
 window.requestAnimFrame=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(a){window.setTimeout(a,1E3/60)}}();
-
 const bgColor = '#222222';
 
 let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
+let canvasContainer = document.getElementById('canvas_container'); 
+
+const canvasWidth = 1280;
+const canvasHeight = 600;
 
 let dpr = window.devicePixelRatio;
-var cw = window.innerWidth - 10;
-var ch = window.innerHeight - 10;
-canvas.width = cw * dpr;
-canvas.height = ch * dpr;
-
+canvas.width = canvasWidth;
+canvas.height = canvasHeight;
 context.scale(dpr, dpr);
+
+
 canvas.addEventListener('mousedown', onSelect, false);
 canvas.addEventListener('dblclick', onDoubleClick, false);
 
-let selectedProductId = null;
+
 let hStep = 300;
 let vStep = 100;
 
-addEventListener("resize", onResize, false);
+const blockWidth = 200;
+const blockSlope = 20;
 
 let colors = [];
 loadColors('./colors.json')
 .then(response => colors = response);
-
+let selectedProductId = null;
 let locale = "en";
 let l18n = [];
 let needRedraw = false;
@@ -48,7 +51,7 @@ function loadColors()
 {
 	return fetch("./colors.json")
 	.then((response) => response.json())
-    .then((data) =>{return data.colors})
+    .then((data) => data.colors)
 	.catch(error => console.warn(error));
 }
 
@@ -69,6 +72,8 @@ function showProduct(productId)
 	selectedProductId = productId;
 	productsToRender = [];
 	let toShow = getProductsToShow(productId, allProducts);
+	// let ancestors = getAncestorsToShow(productId);
+	// toShow = toShow.concat(ancestors);
 	let byTier = mapProductsByTier(toShow);
 	let aligned = alignProductPositions(byTier);
 		productsToRender = flattenProducts(aligned);
@@ -112,10 +117,12 @@ function updateProductInfo(productId)
 	{
 		dropdownBtn.innerText = getLocale(product.id)
 	}
-
-
-
 }
+
+// function getAncestorsToShow(productId)
+// {
+// 	return allProducts.filter(c=>c.precursors.findIndex(p=>p.id == productId) > 0);
+// }
 
 function getProductsToShow(productId, products)
 {
@@ -176,16 +183,34 @@ function loadProductsMap(src)
 
 function alignProductPositions(products)
 {
-	let dx = (canvas.width /2) - (hStep * products.length) / 2
+	let dx = (canvas.width /2) - ((hStep * products.length) / 2 - 55)
+
+	let maxProductsInTier = 1;
+	if(products.length>1)
+	{
+		for (let tier = 1; tier < products.length; tier++)
+		{
+			if(products[tier].length > maxProductsInTier)
+			{
+				maxProductsInTier = products[tier].length;
+			}
+		}
+	}
 
 	for (let tier = 0; tier < products.length; tier++)
 	{
 		let innerArrayLength = products[tier].length;
-		let dy = (canvas.height / 2) - (vStep * innerArrayLength) / 2;
+		let dy = (canvas.height / 2) - (vStep * (innerArrayLength-1) / 2);
 
 		for (let productIndex = 0; productIndex < innerArrayLength; productIndex++) {
-			let x = hStep * tier + dx+200;
+			let x = hStep * tier + dx;
 			let y = vStep * productIndex + dy;
+
+			if(products[tier][productIndex].id == 'energy_cells' && maxProductsInTier > 1)
+			{
+				y = vStep * (maxProductsInTier) + dy;
+			}
+
 			products[tier][productIndex].input = {x, y};
 			products[tier][productIndex].output = {x:x+220, y};
 		}
@@ -253,15 +278,12 @@ function drawConnection(src, tgt) {
 	context.moveTo(p0.x, p0.y);
 
 	let pm = {x:p0.x, y:p0.y};
-
 	let dTier = tgt.tier - src.tier;
 	if(dTier > 1)
 	{
 		pm.x = p0.x + hStep * (dTier - 1);
 		context.lineTo(pm.x, pm.y);
 	}
-
-
 
 	context.bezierCurveTo(p1.x, pm.y, pm.x, p1.y, p1.x, p1.y);
 	context.stroke();
@@ -274,11 +296,11 @@ function drawProduct(product) {
 	context.beginPath();
 	context.setLineDash([]);
 	context.moveTo(x, y);
-	context.lineTo(x+20, y-20);
-	context.lineTo(x+200, y-20);
-	context.lineTo(x+220, y);
-	context.lineTo(x+200, y+20);
-	context.lineTo(x+20, y+20);
+	context.lineTo(x+blockSlope, y-blockSlope);
+	context.lineTo(x+blockWidth, y-20);
+	context.lineTo(x+blockWidth+blockSlope, y);
+	context.lineTo(x+blockWidth, y+blockSlope);
+	context.lineTo(x+blockSlope, y+blockSlope);
 	context.closePath();
 
     context.fillStyle = product.selected ? product.color : bgColor;
@@ -376,22 +398,10 @@ function productClicked(point, product)
 		&& point.y < product.output.y + 20;
 }
 
-function onResize(e)
-{
-	let dpr = window.devicePixelRatio;
-	var cw = window.innerWidth - 10;
-	var ch = window.innerHeight - 10;
-	canvas.width = cw * dpr;
-	canvas.height = ch * dpr;
-	showProduct(selectedProductId)
-
-}
-
 function fillCanvas(color)
 {
 	context.fillStyle = color;
-	context.fillRect(0,0,cw,ch);
-
+	context.fillRect(0,0,canvasWidth,canvasHeight);
 }
 
 function invertColor(hex, bw) {
