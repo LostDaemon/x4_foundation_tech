@@ -45,6 +45,8 @@ jobs:
           cp main.js publish/main.js
           cp robots.txt publish/robots.txt
           cp styles.css publish/styles.css
+          cp googleded053f9e33330e6.html publish/googleded053f9e33330e6.html
+          
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
