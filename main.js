@@ -35,13 +35,18 @@ loadColors('./colors.json')
 let selectedProductId = null;
 let locale = "en";
 let l18n = [];
+let uil18n = [];
 let needRedraw = false;
 let productsToRender = [];
 let allProducts = [];
 
-loadL18n(locale)
+loadProductsL18n(locale)
 .then(response => {
 	l18n = response;
+	loadUIL18n(locale)
+	.then(response => {
+		uil18n = response;
+
  	loadProductsMap('./maps/common.json')
 	.then(response => { 
 	allProducts = response;
@@ -50,6 +55,7 @@ loadL18n(locale)
 		showProduct(urlProduct ?? allProducts[0].id);
 		updateProductList(null);
 	}
+	});
    });
 });
 
@@ -119,10 +125,13 @@ function colorizeProducts(products)
 function toggleLocale()
 {
 	locale = locale == "en" ? "ru" : "en";
-	loadL18n(locale).then(response => {
+	loadProductsL18n(locale).then(response => {
 		l18n = response;
+		loadUIL18n(locale).then(response => {
+			uil18n = response;
 		updateProductList();
 		showProduct(selectedProductId)
+		});
 	 });
 }
 
@@ -140,8 +149,8 @@ function updateProductInfo(productId)
 	{
 		dropdownBtn.innerText = getLocale(product.id)
 		product_label.innerText = getLocale(product.id);
-		consumption_label.innerText = getLocale("consumption_label");
-		production_label.innerText = getLocale("production_label");
+		consumption_label.innerText = getUiLocale("consumption_label");
+		production_label.innerText = getUiLocale("production_label");
 
 		
 		let consumptionInnerHtml = "";
@@ -149,7 +158,7 @@ function updateProductInfo(productId)
 		if(product.precursors)
 		{
 		product.precursors.forEach(p=>{
-			consumptionInnerHtml = consumptionInnerHtml +"<li><b>"+getLocale(p.id)+"</b>: <font style='color:yellow'>"+ p.cycleConsumption +"</font> "+getLocale("per_cycle")+" (<font style='color:yellow'>"+p.cycleConsumption*cyclesPerHour+"</font> "+getLocale("per_hour")+")</li>" + "\n";
+			consumptionInnerHtml = consumptionInnerHtml +"<li><b>"+getLocale(p.id)+"</b>: <font style='color:yellow'>"+ p.cycleConsumption +"</font> "+getUiLocale("per_cycle")+" (<font style='color:yellow'>"+p.cycleConsumption*cyclesPerHour+"</font> "+getUiLocale("per_hour")+")</li>" + "\n";
 		});
 		consumption_list.innerHTML = consumptionInnerHtml;
 		}
@@ -159,15 +168,15 @@ function updateProductInfo(productId)
 
 		if(product.cycleProduction)
 		{
-			productionInnerHtml = "<li><b>"+getLocale(product.id)+"</b>: <font style='color:yellow'>"+ product.cycleProduction +"</font> "+getLocale("per_cycle")+" (<font style='color:yellow'>"+product.cycleProduction*cyclesPerHour+"</font> "+getLocale("per_hour")+")</li>" + "\n";
+			productionInnerHtml = "<li><b>"+getLocale(product.id)+"</b>: <font style='color:yellow'>"+ product.cycleProduction +"</font> "+getUiLocale("per_cycle")+" (<font style='color:yellow'>"+product.cycleProduction*cyclesPerHour+"</font> "+getUiLocale("per_hour")+")</li>" + "\n";
 			let mm = Math.floor(product.cycleDuration / 60);
 			let ss = ("0" + product.cycleDuration % 60).slice(-2);
-			productionInnerHtml = productionInnerHtml + "<li><b>"+getLocale("cycle_duration")+"</b>: <font style='color:yellow'>"+ mm + ":" + ss +"</font></li>" + "\n";
+			productionInnerHtml = productionInnerHtml + "<li><b>"+getUiLocale("cycle_duration")+"</b>: <font style='color:yellow'>"+ mm + ":" + ss +"</font></li>" + "\n";
 		} 
 
-		let faction = getLocale(product.faction ? product.faction : 'common'); 
+		let faction = getUiLocale(product.faction ? product.faction : 'common'); 
 
-		productionInnerHtml = productionInnerHtml + "<li><b>"+getLocale("faction")+"</b>: <font style='color:yellow'>"+ faction +"</font></li>" + "\n";
+		productionInnerHtml = productionInnerHtml + "<li><b>"+getUiLocale("faction")+"</b>: <font style='color:yellow'>"+ faction +"</font></li>" + "\n";
 		production_list.innerHTML = productionInnerHtml;
 	}
 
@@ -222,9 +231,17 @@ function mapProductsByTier(products)
 	return productsByTier;
 }
 	
-function loadL18n(locale)
+function loadProductsL18n(locale)
 {
   return fetch("./l18n/"+locale+".json")
+	.then((response) => response.json())
+    .then((data) =>{return data.localization})
+	.catch(error => console.warn(error));
+}
+
+function loadUIL18n(locale)
+{
+  return fetch("./l18n/ui_"+locale+".json")
 	.then((response) => response.json())
     .then((data) =>{return data.localization})
 	.catch(error => console.warn(error));
@@ -235,6 +252,13 @@ function getLocale(id)
 	let result = l18n.find(c=>c.id == id);
 	return result?.value ?? id;
 }
+
+function getUiLocale(id)
+{
+	let result = uil18n.find(c=>c.id == id);
+	return result?.value ?? id;
+}
+
 
 function loadProductsMap(src)
 {

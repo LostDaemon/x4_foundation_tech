@@ -1,0 +1,19 @@
+{
+	"localization":[
+		{"id":"faction", "value":"Фракция"},
+		{"id":"argon", "value":"Аргон"},
+		{"id":"teladi", "value":"Телади"},
+		{"id":"paranid", "value":"Паранид"},
+		{"id":"split", "value":"Сплит"},
+		{"id":"terran", "value":"Земляне"},
+		{"id":"boron", "value":"Борон"},
+		{"id":"common", "value":"Общее"},
+
+        {"id":"consumption_label", "value":"Потребляет:"},
+		{"id":"production_label", "value":"Производит:"},
+		{"id":"per_cycle", "value":"за цикл"},
+		{"id":"per_hour", "value":"в час"},
+		{"id":"cycle_duration", "value":"Продолжительность цикла"}
+	]
+}
+ 
