@@ -32,6 +32,37 @@
 
 #product_label
 {
-  margin-left: 20px; 
+  margin-left: 10px; 
   margin-top: 5px;
+  height: 30px;
+}
+
+.product_info
+{
+  padding: 20px;
+}
+
+.vh-50
+{
+  height: 50vh;
+  min-height: 465px;
+}
+
+#canvas
+{
+  width: 100%;
+  height:100%;
+  min-width: 1800px;
+  min-height: 465px;
+}
+
+#canvas_container
+{
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#footer
+{
+  margin-top: 20px;
 }

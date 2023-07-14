@@ -8,20 +8,17 @@ const bgColor = '#222222';
 
 let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
+let needRedraw = false;
 let canvasContainer = document.getElementById('canvas_container'); 
+const dpr = window.devicePixelRatio;
 
-const canvasWidth = 1280;
-const canvasHeight = 500;
-
-let dpr = window.devicePixelRatio;
-canvas.width = canvasWidth;
-canvas.height = canvasHeight;
-context.scale(dpr, dpr);
-
+canvas.width  = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+context.scale(1, 1);
 
 canvas.addEventListener('mousedown', onSelect, false);
 canvas.addEventListener('dblclick', onDoubleClick, false);
-
+addEventListener("resize", onResize);
 
 let hStep = 300;
 let vStep = 100;
@@ -32,13 +29,14 @@ const blockSlope = 20;
 let colors = [];
 loadColors('./colors.json')
 .then(response => colors = response);
-let selectedProductId = null;
+
 let locale = "en";
 let l18n = [];
 let uil18n = [];
-let needRedraw = false;
+
 let productsToRender = [];
 let allProducts = [];
+let selectedProductId = null;
 
 loadProductsL18n(locale)
 .then(response => {
@@ -104,6 +102,7 @@ function showProduct(productId)
 		needRedraw = true;
 		updateUrl(productId);
 		updateProductInfo(productId);
+		centerCanvasScroll();
 }
 
 function colorizeProducts(products)
@@ -361,7 +360,7 @@ function drawConnection(src, tgt) {
 	context.beginPath();
 	context.setLineDash([3, 3]);
 	context.lineWidth = tgt.selected ? 2 : 0.5;
-	context.strokeStyle = tgt.selected ? src.color : '#444444';
+	context.strokeStyle = tgt.selected ? src.color : '#555555';
 	context.moveTo(p0.x, p0.y);
 
 	let pm = {x:p0.x, y:p0.y};
@@ -384,7 +383,7 @@ function drawProduct(product) {
 	context.setLineDash([]);
 	context.moveTo(x, y);
 	context.lineTo(x+blockSlope, y-blockSlope);
-	context.lineTo(x+blockWidth, y-20);
+	context.lineTo(x+blockWidth, y-blockSlope);
 	context.lineTo(x+blockWidth+blockSlope, y);
 	context.lineTo(x+blockWidth, y+blockSlope);
 	context.lineTo(x+blockSlope, y+blockSlope);
@@ -432,9 +431,20 @@ function drawProduct(product) {
 
 }
 
+function adaptCursorToCanvasCoords(point) 
+{
+	const scrollX = canvasContainer.scrollLeft + window.scrollX;
+	const scrollY = canvasContainer.scrollTop + window.scrollY;
+	const mouseX = point.x - canvas.offsetLeft + scrollX;
+	const mouseY = point.y - canvas.offsetTop + scrollY;
+	const resultX = mouseX * canvas.width / canvas.clientWidth;
+	const resultY = mouseY * canvas.height / canvas.clientHeight;
+	return {x:resultX, y:resultY};
+}
+
 function onDoubleClick(e)
 {
-	var point = {x: e.pageX - canvas.offsetLeft, y: e.pageY - canvas.offsetTop};		
+	var point = adaptCursorToCanvasCoords({x:e.pageX, y: e.pageY});
 	productsToRender.forEach(product=>{
 		if(productClicked(point, product))
 		{
@@ -444,7 +454,8 @@ function onDoubleClick(e)
 }
 
 function onSelect(e){
-	var point = {x: e.pageX - canvas.offsetLeft, y: e.pageY - canvas.offsetTop};		
+	var point = adaptCursorToCanvasCoords({x:e.clientX, y:e.clientY});
+
 	productsToRender.forEach(product=>{
 	
 	if(productClicked(point, product))
@@ -475,20 +486,35 @@ function selectProduct(product)
 
 }
 
-
 function productClicked(point, product)
 {
 	needRedraw = true;
 	return point.x > product.input.x 
 		&& point.x < product.output.x
-		&& point.y > product.input.y - 20
-		&& point.y < product.output.y + 20;
+		&& point.y > product.input.y - blockSlope
+		&& point.y < product.output.y + blockSlope;
 }
 
 function fillCanvas(color)
 {
 	context.fillStyle = color;
-	context.fillRect(0,0,canvasWidth,canvasHeight);
+	context.fillRect(0,0,canvas.width,canvas.height);
+}
+
+function centerCanvasScroll()
+{
+	if(canvasContainer)
+	{
+		const x = canvas.offsetWidth/2 - canvasContainer.offsetWidth/2;
+		const y = canvas.offsetHeight/2-canvasContainer.offsetHeight/2;
+		canvasContainer.scrollTo(x, y);
+	}
+}
+
+function onResize()
+{
+	centerCanvasScroll();
+	needRedraw = true;
 }
 
 function invertColor(hex, bw) {
@@ -527,8 +553,10 @@ var loop = function()
 		fillCanvas(bgColor);
 		drawConnections(productsToRender);
 		drawProducts(productsToRender);
+
 		needRedraw = false;
 	}
 }
-            
+
+           
 loop();
