@@ -513,7 +513,6 @@ function centerCanvasScroll()
 
 function onResize()
 {
-	centerCanvasScroll();
 	needRedraw = true;
 }
 
