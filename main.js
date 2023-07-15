@@ -20,7 +20,7 @@ canvas.addEventListener('mousedown', onSelect, false);
 canvas.addEventListener('dblclick', onDoubleClick, false);
 addEventListener("resize", onResize);
 
-let hStep = 300;
+let hStep = 320;
 let vStep = 100;
 
 const blockWidth = 200;
@@ -288,6 +288,8 @@ function alignProductPositions(products)
 	let maxProductsInTier = 1;
 	if(products.length>1)
 	{
+		maxProductsInTier = products[0].length;
+
 		for (let tier = 1; tier < products.length; tier++)
 		{
 			if(products[tier].length > maxProductsInTier)
@@ -300,19 +302,26 @@ function alignProductPositions(products)
 	for (let tier = 0; tier < products.length; tier++)
 	{
 		let innerArrayLength = products[tier].length;
-		let dy = (canvas.height / 2) - (vStep * (innerArrayLength-1) / 2);
+
+		let hCorrection = 0;
+		if(tier > 0 && products[tier].length == products[0].length)
+  		{
+		 	hCorrection = vStep;
+		}
+
+		let dy = (canvas.height / 2) - (vStep * (innerArrayLength-1) / 2) - hCorrection;
 
 		for (let productIndex = 0; productIndex < innerArrayLength; productIndex++) {
 			let x = hStep * tier + dx;
 			let y = vStep * productIndex + dy;
 
-			if(products[tier][productIndex].id == 'energy_cells' && maxProductsInTier > 1)
-			{
-				y = vStep * (maxProductsInTier) + dy;
-			}
+			// if(products[tier][productIndex].id == 'energy_cells' && maxProductsInTier >= products[0].length)
+			// {
+			// 	y = vStep * (maxProductsInTier) + dy;
+			// }
 
 			products[tier][productIndex].input = {x, y};
-			products[tier][productIndex].output = {x:x+220, y};
+			products[tier][productIndex].output = {x: x + blockWidth + blockSlope, y};
 		}
 	}
 	return products;

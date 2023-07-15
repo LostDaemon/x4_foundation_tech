@@ -368,7 +368,7 @@
 		},
 		{
 			"id":"spacefuel",
-			"tier" : 2,
+			"tier" : 3,
 			"precursors": [{"id":"energy_cells", "cycleConsumption":40},
 			{"id":"water", "cycleConsumption":100},
 			{"id":"wheat", "cycleConsumption":80}],
