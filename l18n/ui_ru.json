@@ -13,7 +13,8 @@
 		{"id":"production_label", "value":"Производит:"},
 		{"id":"per_cycle", "value":"за цикл"},
 		{"id":"per_hour", "value":"в час"},
-		{"id":"cycle_duration", "value":"Продолжительность цикла"}
+		{"id":"cycle_duration", "value":"Продолжительность цикла"},
+		{"id":"is_used_for_label", "value":"Используется для:"}
 	]
 }
  

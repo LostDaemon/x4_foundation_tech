@@ -40,6 +40,8 @@
 .product_info
 {
   padding: 20px;
+  min-width: 300px;
+  max-width: 1000px;
 }
 
 .vh-50
@@ -70,4 +72,9 @@
 .buymeacoffee
 {
   margin-top: 10px;
+}
+
+.productinfo
+{
+  flex: 1 1 auto;
 }

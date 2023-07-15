@@ -40,7 +40,7 @@
   <div class="container-fluid" style="background-color:#333333;">
     <h4 id="product_label"></h5>
   </div>
-  <div class="d-flex align-content-center flex-wrap">
+  <div class="d-flex flex-wrap productinfo">
     <div class="product_info">
       <h6 id="consumption_label">Consumption</h6>
       <ul id="consumption_list"></ul>
@@ -49,10 +49,15 @@
       <h6 id="production_label">Production</h6>
       <ul id="production_list"></ul>
     </div>
+    <div class="product_info flex-grow">
+      <h6 id="is_used_for_label">Is used for:</h6>
+      <div id="ancestors_list" class="d-flex flex-wrap gap-1">
+      </div>
+    </div>
   </div>
   <div id="footer" class="text-center" >
     <div class="footer">
-      <small>Feel free to contribute to the project on
+      <small>Feel free to contribute to the project on 
          <a class="link-opacity-25" href="https://github.com/LostDaemon/x4_foundation_tech">GitHub</a>
          <br/>Created by LostDaemon in 2023
       </small>

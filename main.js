@@ -93,8 +93,6 @@ function showProduct(productId)
 	selectedProductId = productId;
 	productsToRender = [];
 	let toShow = getProductsToShow(productId, allProducts);
-	// let ancestors = getAncestorsToShow(productId);
-	// toShow = toShow.concat(ancestors);
 	let byTier = mapProductsByTier(toShow);
 	let aligned = alignProductPositions(byTier);
 		productsToRender = flattenProducts(aligned);
@@ -140,18 +138,19 @@ function updateProductInfo(productId)
 	const product_label = document.getElementById('product_label');
 	const consumption_label = document.getElementById('consumption_label');
 	const production_label = document.getElementById('production_label');
+	const is_used_for_label = document.getElementById('is_used_for_label');
 	const consumption_list = document.getElementById('consumption_list');
 	const production_list = document.getElementById('production_list');
-
+	const ancestors_list = document.getElementById('ancestors_list');
 	let product = allProducts.find(c=>c.id == productId);
-	if(product) 
-	{
+	if(!product) return;
+
 		dropdownBtn.innerText = getLocale(product.id)
 		product_label.innerText = getLocale(product.id);
 		consumption_label.innerText = getUiLocale("consumption_label");
 		production_label.innerText = getUiLocale("production_label");
+		is_used_for_label.innerText = getUiLocale("is_used_for_label");
 
-		
 		let consumptionInnerHtml = "";
 		let cyclesPerHour = product.cycleDuration ? 3600/product.cycleDuration : 0;
 		if(product.precursors)
@@ -177,9 +176,23 @@ function updateProductInfo(productId)
 
 		productionInnerHtml = productionInnerHtml + "<li><b>"+getUiLocale("faction")+"</b>: <font style='color:yellow'>"+ faction +"</font></li>" + "\n";
 		production_list.innerHTML = productionInnerHtml;
-	}
 
-	
+		let ancestors = getAncestorsToShow(productId);
+
+		console.log(ancestors);
+
+		let ancestorsListInnerHtml="";
+
+		ancestors.forEach(ancestor=>{
+			ancestorsListInnerHtml+="<div><a href='"+baseUrl+"?product="+ancestor.id+"' class='btn btn-outline-secondary' style='margin:1px; height:28px; padding-top:0px'>"+getLocale(ancestor.id)+"</a></div>";
+		});
+
+		if(!ancestorsListInnerHtml)
+		{
+			ancestorsListInnerHtml = "-";
+		}
+
+		ancestors_list.innerHTML = ancestorsListInnerHtml;
 
 }
 
@@ -190,10 +203,11 @@ function updateUrl(productId)
 	history.pushState(null, null, url);
 }
 
-// function getAncestorsToShow(productId)
-// {
-// 	return allProducts.filter(c=>c.precursors.findIndex(p=>p.id == productId) > 0);
-// }
+function getAncestorsToShow(productId)
+{
+	console.log(allProducts);
+	return allProducts.filter(c=>c.precursors.findIndex(p=>p.id == productId) >= 0);
+}
 
 function getProductsToShow(productId, products)
 {
