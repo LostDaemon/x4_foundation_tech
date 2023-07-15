@@ -141,6 +141,17 @@
 			"cycleDuration": 600
 		},
 		{
+			"id":"smartchips",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":50},
+				{"id":"silicon_wafers", "cycleConsumption":20}],
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":143,
+			"cycleDuration": 600
+		},
+		{
 			"id":"advanced_composites",
 			"tier" : 2,
 			"precursors": [

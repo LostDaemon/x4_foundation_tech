@@ -14,7 +14,8 @@
 		{"id":"per_cycle", "value":"за цикл"},
 		{"id":"per_hour", "value":"в час"},
 		{"id":"cycle_duration", "value":"Продолжительность цикла"},
-		{"id":"is_used_for_label", "value":"Используется для:"}
+		{"id":"is_used_for_label", "value":"Используется для:"},
+		{"id":"end_tier_ware", "value":"Строительство кораблей, станций, оборудования и т.д."}
 	]
 }
  

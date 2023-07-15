@@ -14,7 +14,8 @@
 		{"id":"per_cycle", "value":"per cycle"},
 		{"id":"per_hour", "value":"per hour"},
 		{"id":"cycle_duration", "value":"Cycle duration"},
-		{"id":"is_used_for_label", "value":"Is used for:"}
+		{"id":"is_used_for_label", "value":"Is used for:"},
+		{"id":"end_tier_ware", "value":"Building ships, stations, equipment etc."}
 	]
 }
 

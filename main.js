@@ -178,9 +178,6 @@ function updateProductInfo(productId)
 		production_list.innerHTML = productionInnerHtml;
 
 		let ancestors = getAncestorsToShow(productId);
-
-		console.log(ancestors);
-
 		let ancestorsListInnerHtml="";
 
 		ancestors.forEach(ancestor=>{
@@ -189,7 +186,7 @@ function updateProductInfo(productId)
 
 		if(!ancestorsListInnerHtml)
 		{
-			ancestorsListInnerHtml = "-";
+			ancestorsListInnerHtml = getUiLocale("end_tier_ware");
 		}
 
 		ancestors_list.innerHTML = ancestorsListInnerHtml;
@@ -205,7 +202,6 @@ function updateUrl(productId)
 
 function getAncestorsToShow(productId)
 {
-	console.log(allProducts);
 	return allProducts.filter(c=>c.precursors.findIndex(p=>p.id == productId) >= 0);
 }
 
@@ -314,12 +310,6 @@ function alignProductPositions(products)
 		for (let productIndex = 0; productIndex < innerArrayLength; productIndex++) {
 			let x = hStep * tier + dx;
 			let y = vStep * productIndex + dy;
-
-			// if(products[tier][productIndex].id == 'energy_cells' && maxProductsInTier >= products[0].length)
-			// {
-			// 	y = vStep * (maxProductsInTier) + dy;
-			// }
-
 			products[tier][productIndex].input = {x, y};
 			products[tier][productIndex].output = {x: x + blockWidth + blockSlope, y};
 		}

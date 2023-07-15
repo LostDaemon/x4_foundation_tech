@@ -17,6 +17,7 @@
 		{"id":"engine_parts", "value":"Engine parts"},
 		{"id":"hull_parts", "value":"Hull parts"},
 		{"id":"microchips", "value":"Microchips"},
+		{"id":"smartchips", "value":"Smart-chips"},
 		{"id":"scanning_arrays", "value":"Scanning arrays"},
 		{"id":"advanced_composites", "value":"Advanced composites"},
 		{"id":"quantum_tubes", "value":"Quantum tubes"},

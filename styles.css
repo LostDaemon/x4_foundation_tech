@@ -64,14 +64,24 @@
   overflow-y: hidden;
 }
 
-#footer
+.footer
 {
-  margin-top: 0px;
+  text-align: center; 
+  margin-bottom: 2%;
+}
+
+.copyright
+{
+  display: inline-block;
+  text-align: right; 
+  margin-top: -5px;
 }
 
 .buymeacoffee
 {
-  margin-top: 10px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
 }
 
 .productinfo
