@@ -39,8 +39,8 @@ jobs:
           mkdir publish 
           cp -R l18n publish/l18n
           cp -R maps publish/maps
+          cp -R img publish/img
           cp colors.json publish/colors.json
-          cp favicon.ico publish/favicon.ico
           cp index.html publish/index.html
           cp main.js publish/main.js
           cp robots.txt publish/robots.txt

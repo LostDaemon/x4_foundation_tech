@@ -19,7 +19,7 @@
   width: 80px;
 }
 
-.copyright
+.footer
 {
   color: #444444;
 }
@@ -64,5 +64,10 @@
 
 #footer
 {
-  margin-top: 20px;
+  margin-top: 0px;
+}
+
+.buymeacoffee
+{
+  margin-top: 10px;
 }
