@@ -576,7 +576,7 @@
 			{"id":"water", "cycleConsumption":60},
 			{"id":"spices", "cycleConsumption":60},
 			{"id":"scruffin_fruit", "cycleConsumption":30}],
-			"faction": "teladi",
+			"faction": "split",
 			"container":"container",
 			"cycleProduction":208,
 			"cycleDuration": 300
