@@ -101,7 +101,15 @@ function showProduct(productId)
 		needRedraw = true;
 		updateUrl(productId);
 		updateProductInfo(productId);
+		clearFilter();
 		centerCanvasScroll();
+}
+
+function clearFilter()
+{
+	let filterInput = document.getElementById('filter');
+	filterInput.value="";
+	filter = "";
 }
 
 function colorizeProducts(products)
