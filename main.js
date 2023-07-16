@@ -3,7 +3,6 @@ window.requestAnimFrame=function(){return window.requestAnimationFrame||window.w
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const urlProduct = urlParams.get('product')
-const urlLocale = urlParams.get('locale')
 const baseUrl = location.protocol + '//' + location.host + location.pathname;
 const bgColor = '#222222';
 
@@ -31,7 +30,7 @@ let colors = [];
 loadColors('./colors.json')
 .then(response => colors = response);
 
-let locale = urlLocale ?? "en";
+let locale = "en";
 let l18n = [];
 let uil18n = [];
 
@@ -83,7 +82,7 @@ function updateProductList(filter)
 
 	filtered = filtered.sort((a,b) => (a.value > b.value) ? 1 : ((b.value > a.value) ? -1 : 0))
 	filtered.forEach(c=>{
-		innerHtml = innerHtml +"<li><a href=\"#\" class=\"list-group-item list-group-item-action\" onclick=\"showProduct('"+c.id+"')\">"+c.value+"</a></li>" + "\n";
+		innerHtml = innerHtml +"<li><a class=\"list-group-item list-group-item-action\" onclick=\"showProduct('"+c.id+"')\">"+c.value+"</a></li>" + "\n";
 	});
 
 	productListComponent.innerHTML = innerHtml;
@@ -190,8 +189,7 @@ function updateProductInfo(productId)
 		let ancestorsListInnerHtml="";
 
 		ancestors.forEach(ancestor=>{
-			let url = baseUrl+"?product="+ancestor.id+"&locale="+locale;
-			ancestorsListInnerHtml+="<div><a href='"+url+"' class='btn btn-outline-secondary' style='margin:1px; height:28px; padding-top:0px'>"+getLocale(ancestor.id)+"</a></div>";
+			ancestorsListInnerHtml+="<div><a onclick=\"showProduct('"+ancestor.id+"')\" class='btn btn-outline-secondary' style='margin:1px; height:28px; padding-top:0px'>"+getLocale(ancestor.id)+"</a></div>";
 		});
 
 		if(!ancestorsListInnerHtml)
@@ -204,8 +202,7 @@ function updateProductInfo(productId)
 
 function updateUrl(productId)
 {
-	let url = baseUrl + '?product=' + productId + "&locale="+locale;
-
+	let url = baseUrl + '?product=' + productId;
 	history.pushState(null, null, url);
 }
 
