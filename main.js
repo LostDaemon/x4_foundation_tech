@@ -3,6 +3,7 @@ window.requestAnimFrame=function(){return window.requestAnimationFrame||window.w
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const urlProduct = urlParams.get('product')
+const urlLocale = urlParams.get('locale')
 const baseUrl = location.protocol + '//' + location.host + location.pathname;
 const bgColor = '#222222';
 
@@ -30,7 +31,7 @@ let colors = [];
 loadColors('./colors.json')
 .then(response => colors = response);
 
-let locale = "en";
+let locale = urlLocale ?? "en";
 let l18n = [];
 let uil18n = [];
 
@@ -181,7 +182,8 @@ function updateProductInfo(productId)
 		let ancestorsListInnerHtml="";
 
 		ancestors.forEach(ancestor=>{
-			ancestorsListInnerHtml+="<div><a href='"+baseUrl+"?product="+ancestor.id+"' class='btn btn-outline-secondary' style='margin:1px; height:28px; padding-top:0px'>"+getLocale(ancestor.id)+"</a></div>";
+			let url = baseUrl+"?product="+ancestor.id+"&locale="+locale;
+			ancestorsListInnerHtml+="<div><a href='"+url+"' class='btn btn-outline-secondary' style='margin:1px; height:28px; padding-top:0px'>"+getLocale(ancestor.id)+"</a></div>";
 		});
 
 		if(!ancestorsListInnerHtml)
@@ -190,12 +192,11 @@ function updateProductInfo(productId)
 		}
 
 		ancestors_list.innerHTML = ancestorsListInnerHtml;
-
 }
 
 function updateUrl(productId)
 {
-	let url = baseUrl + '?product=' + productId;
+	let url = baseUrl + '?product=' + productId + "&locale="+locale;
 
 	history.pushState(null, null, url);
 }
