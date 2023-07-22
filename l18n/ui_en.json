@@ -15,7 +15,10 @@
 		{"id":"per_hour", "value":"per hour"},
 		{"id":"cycle_duration", "value":"Cycle duration"},
 		{"id":"is_used_for_label", "value":"Is used for:"},
-		{"id":"end_tier_ware", "value":"Building ships, stations, equipment etc."}
+		{"id":"end_tier_ware", "value":"Building ships, stations, equipment etc."},
+		{"id":"game_version", "value":"Data is valid for X4 Foundation v6.1"},
+		{"id":"created_by", "value":"Created by LostDaemon in 2023"},
+		{"id":"follow_me", "value":"Follow me on"}
 	]
 }
 

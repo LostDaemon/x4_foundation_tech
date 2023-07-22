@@ -52,6 +52,7 @@ loadProductsL18n(locale)
 	{
 		showProduct(urlProduct ?? allProducts[0].id);
 		updateProductList(null);
+		updateUI();
 	}
 	});
    });
@@ -134,10 +135,23 @@ function toggleLocale()
 		l18n = response;
 		loadUIL18n(locale).then(response => {
 			uil18n = response;
+		showProduct(selectedProductId);
 		updateProductList();
-		showProduct(selectedProductId)
+		updateUI();
 		});
 	 });
+}
+
+function updateUI()
+{
+	const follow_me = document.getElementById('follow_me');
+	follow_me.innerText = getUiLocale("follow_me");
+
+	const created_by = document.getElementById('created_by');
+	created_by.innerText = getUiLocale("created_by");
+
+	const game_version = document.getElementById('game_version');
+	game_version.innerText = getUiLocale("game_version");
 }
 
 function updateProductInfo(productId)

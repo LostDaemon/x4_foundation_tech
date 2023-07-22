@@ -15,7 +15,10 @@
 		{"id":"per_hour", "value":"в час"},
 		{"id":"cycle_duration", "value":"Продолжительность цикла"},
 		{"id":"is_used_for_label", "value":"Используется для:"},
-		{"id":"end_tier_ware", "value":"Строительство кораблей, станций, оборудования и т.д."}
+		{"id":"end_tier_ware", "value":"Строительство кораблей, станций, оборудования и т.д."},
+		{"id":"game_version", "value":"Данные верны для X4 Foundation v6.1"},
+		{"id":"created_by", "value":"Создано LostDaemon в 2023"},
+		{"id":"follow_me", "value":"Моя страница на"}
 	]
 }
  

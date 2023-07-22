@@ -19,11 +19,6 @@
   width: 80px;
 }
 
-.footer
-{
-  color: #444444;
-}
-
 .filter
 {
   margin-left: 10px;
@@ -67,6 +62,13 @@
 .footer
 {
   text-align: center; 
+  color: #444444;
+}
+
+.game_version
+{
+  text-align: center; 
+  color: #444444;
   margin-bottom: 2%;
 }
 
