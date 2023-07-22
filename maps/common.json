@@ -96,7 +96,7 @@
 			"cycleDuration": 240
 		},
 		{
-			"id":"antimater_cells",
+			"id":"antimatter_cells",
 			"tier" : 1,
 			"precursors": [
 				{"id":"energy_cells", "cycleConsumption":100},
@@ -205,7 +205,7 @@
 			"precursors": [
 				{"id":"energy_cells", "cycleConsumption":60},
 				{"id":"refined_metals", "cycleConsumption":96},
-				{"id":"antimater_cells", "cycleConsumption":80}],
+				{"id":"antimatter_cells", "cycleConsumption":80}],
 			"faction": "common",
 			"container":"container",
 			"cycleProduction":208,
@@ -224,7 +224,7 @@
 			"cycleDuration": 720
 		},
 		{
-			"id":"antimater_converters",
+			"id":"antimatter_converters",
 			"tier" : 3,
 			"precursors": [
 				{"id":"energy_cells", "cycleConsumption":80},
@@ -240,7 +240,7 @@
 			"tier" : 3,
 			"precursors": [
 				{"id":"energy_cells", "cycleConsumption":140},
-				{"id":"antimater_cells", "cycleConsumption":100},
+				{"id":"antimatter_cells", "cycleConsumption":100},
 				{"id":"microchips", "cycleConsumption":160},
 				{"id":"quantum_tubes", "cycleConsumption":100}],
 			"faction": "common",
@@ -432,7 +432,7 @@
 			"cycleDuration": 600
 		},
 		{
-			"id":"teladinium",
+			"id":"teladianium",
 			"tier" : 1,
 			"precursors": [{"id":"energy_cells", "cycleConsumption":45},
 			{"id":"ore", "cycleConsumption":280}],
@@ -458,7 +458,7 @@
 			"tier" : 2,
 			"precursors": [
 				{"id":"energy_cells", "cycleConsumption":80},
-				{"id":"teladinium", "cycleConsumption":204},
+				{"id":"teladianium", "cycleConsumption":204},
 				{"id":"graphene", "cycleConsumption":40}],
 			"faction": "teladi",
 			"container":"container",
@@ -470,8 +470,8 @@
 			"tier" : 2,
 			"precursors": [
 				{"id":"energy_cells", "cycleConsumption":60},
-				{"id":"teladinium", "cycleConsumption":70},
-				{"id":"antimater_cells", "cycleConsumption":80}],
+				{"id":"teladianium", "cycleConsumption":70},
+				{"id":"antimatter_cells", "cycleConsumption":80}],
 			"faction": "teladi",
 			"container":"container",
 			"cycleProduction":208,
@@ -482,7 +482,7 @@
 			"tier" : 2,
 			"precursors": [
 				{"id":"energy_cells", "cycleConsumption":50},
-				{"id":"teladinium", "cycleConsumption":58},
+				{"id":"teladianium", "cycleConsumption":58},
 				{"id":"graphene", "cycleConsumption":80}],
 			"faction": "teladi",
 			"container":"container",
@@ -494,7 +494,7 @@
 			"tier" : 2,
 			"precursors": [
 				{"id":"energy_cells", "cycleConsumption":60},
-				{"id":"teladinium", "cycleConsumption":73},
+				{"id":"teladianium", "cycleConsumption":73},
 				{"id":"silicon_wafers", "cycleConsumption":60}],
 			"faction": "teladi",
 			"container":"container",
@@ -593,7 +593,7 @@
 			"cycleDuration": 300
 		},
 		{
-			"id":"biogas",
+			"id":"bogas",
 			"tier" : 2,
 			"precursors": [{"id":"energy_cells", "cycleConsumption":40},
 			{"id":"water", "cycleConsumption":100}],
@@ -617,7 +617,7 @@
 			"tier" : 3,
 			"precursors": [{"id":"energy_cells", "cycleConsumption":40},
 			{"id":"plankton", "cycleConsumption":120},
-			{"id":"biogas", "cycleConsumption":40}],
+			{"id":"bogas", "cycleConsumption":40}],
 			"faction": "boron",
 			"container":"container",
 			"cycleProduction":82,
@@ -656,7 +656,7 @@
 			"cycleProduction":219,
 			"cycleDuration": 300
 		},{
-			"id":"stimulators",
+			"id":"stimulants",
 			"tier" : 1,
 			"precursors": [{"id":"energy_cells", "cycleConsumption":80},
 			{"id":"helium", "cycleConsumption":400},
