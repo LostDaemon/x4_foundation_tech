@@ -71,10 +71,10 @@
 		{"id":"scrap_metal", "value":"Металлолом"},
 		{"id":"allographene_fragments", "value":"Фрагменты аллографина"},
 		{"id":"allographene", "value":"Аллографин"},
-		{"id":"claytronics_scrap", "value":"Клэйтроника"},
-		{"id":"hull_parts_scrap", "value":"Детали корпуса"},
-		{"id":"computronic_substrate_scrap", "value":"Компьютронный субстрат"},
-		{"id":"silicon_carbide_scrap", "value":"Карборунд"}
+		{"id":"claytronics_scrap", "value":"Клэйтроника (из лома)"},
+		{"id":"hull_parts_scrap", "value":"Детали корпуса (из лома)"},
+		{"id":"computronic_substrate_scrap", "value":"Компьютронный субстрат (из лома)"},
+		{"id":"silicon_carbide_scrap", "value":"Карборунд (из лома)"}
 	]
 }
  

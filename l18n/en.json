@@ -71,10 +71,10 @@
 		{"id":"scrap_metal", "value":"Scrap Metal"},
 		{"id":"allographene_fragments", "value":"Allographene Fragments"},
 		{"id":"allographene", "value":"Allographene"},
-		{"id":"claytronics_scrap", "value":"Claytronics"},
-		{"id":"hull_parts_scrap", "value":"Hull parts"},
-		{"id":"computronic_substrate_scrap", "value":"Computronic Substrate"},
-		{"id":"silicon_carbide_scrap", "value":"Silicon Carbide"}
+		{"id":"claytronics_scrap", "value":"Claytronics (from scrap)"},
+		{"id":"hull_parts_scrap", "value":"Hull parts (from scrap)"},
+		{"id":"computronic_substrate_scrap", "value":"Computronic Substrate (from scrap)"},
+		{"id":"silicon_carbide_scrap", "value":"Silicon Carbide (from scrap)"}
 	]
 }
 
