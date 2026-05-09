@@ -18,6 +18,7 @@
 		{"id":"end_tier_ware", "value":"Строительство кораблей, станций, оборудования и т.д."},
 		{"id":"game_version", "value":"Данные верны для X4 Foundation v9.0"},
 		{"id":"created_by", "value":"Создано LostDaemon в 2023"},
+		{"id":"updated_at", "value":"Обновлено в мае 2026"},
 		{"id":"follow_me", "value":"Моя страница на"}
 	]
 }

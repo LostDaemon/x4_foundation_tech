@@ -150,6 +150,9 @@ function updateUI()
 	const created_by = document.getElementById('created_by');
 	created_by.innerText = getUiLocale("created_by");
 
+	const updated_at = document.getElementById('updated_at');
+	updated_at.innerText = getUiLocale("updated_at");
+
 	const game_version = document.getElementById('game_version');
 	game_version.innerText = getUiLocale("game_version");
 }

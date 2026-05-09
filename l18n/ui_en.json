@@ -18,6 +18,7 @@
 		{"id":"end_tier_ware", "value":"Building ships, stations, equipment etc."},
 		{"id":"game_version", "value":"Data is valid for X4 Foundation v9.0"},
 		{"id":"created_by", "value":"Created by LostDaemon in 2023"},
+		{"id":"updated_at", "value":"Updated in May 2026"},
 		{"id":"follow_me", "value":"Follow me on"}
 	]
 }
