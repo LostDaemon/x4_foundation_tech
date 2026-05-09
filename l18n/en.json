@@ -64,7 +64,17 @@
 		{"id":"computronic_substrate", "value":"Computronic Substrate"},
 		{"id":"silicon_carbide", "value":"Silicon Carbide"},
 		{"id":"food_rations_terrain", "value":"Terrain MRE"},
-		{"id":"medical_supplies_terrain", "value":"Medical Supplies (Ter)"}
+		{"id":"medical_supplies_terrain", "value":"Medical Supplies (Ter)"},
+		{"id":"unprocessed_scrap_metal", "value":"Raw Scrap Metal"},
+		{"id":"unprocessed_allographene_scrap", "value":"Raw Allographene Scrap"},
+		{"id":"nividium", "value":"Nividium"},
+		{"id":"scrap_metal", "value":"Scrap Metal"},
+		{"id":"allographene_fragments", "value":"Allographene Fragments"},
+		{"id":"allographene", "value":"Allographene"},
+		{"id":"claytronics_scrap", "value":"Claytronics (Scrap)"},
+		{"id":"hull_parts_scrap", "value":"Hull parts (Scrap)"},
+		{"id":"computronic_substrate_scrap", "value":"Computronic Substrate (Scrap)"},
+		{"id":"silicon_carbide_scrap", "value":"Silicon Carbide (Scrap)"}
 	]
 }
 

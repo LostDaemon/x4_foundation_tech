@@ -64,7 +64,17 @@
 		{"id":"computronic_substrate", "value":"Компьютронный субстрат"},
 		{"id":"silicon_carbide", "value":"Карборунд"},
 		{"id":"food_rations_terrain", "value":"Рационы питания (Зем)"},
-		{"id":"medical_supplies_terrain", "value":"Медикаменты (Зем)"}
+		{"id":"medical_supplies_terrain", "value":"Медикаменты (Зем)"},
+		{"id":"unprocessed_scrap_metal", "value":"Необработанный металлолом"},
+		{"id":"unprocessed_allographene_scrap", "value":"Аллографиновый лом"},
+		{"id":"nividium", "value":"Нивидиум"},
+		{"id":"scrap_metal", "value":"Металлолом"},
+		{"id":"allographene_fragments", "value":"Фрагменты аллографина"},
+		{"id":"allographene", "value":"Аллографин"},
+		{"id":"claytronics_scrap", "value":"Клэйтроника (из переработки)"},
+		{"id":"hull_parts_scrap", "value":"Детали корпуса (из переработки)"},
+		{"id":"computronic_substrate_scrap", "value":"Компьютронный субстрат (из переработки)"},
+		{"id":"silicon_carbide_scrap", "value":"Карборунд (из переработки)"}
 	]
 }
  

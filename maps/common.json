@@ -710,6 +710,105 @@
 			"container":"container",
 			"cycleProduction":140,
 			"cycleDuration": 300
+		},
+		{
+			"id":"unprocessed_scrap_metal",
+			"tier" : 0,
+			"precursors": [],
+			"faction": "common",
+			"container":"container"
+		},
+		{
+			"id":"unprocessed_allographene_scrap",
+			"tier" : 0,
+			"precursors": [],
+			"faction": "common",
+			"container":"container"
+		},
+		{
+			"id":"nividium",
+			"tier" : 0,
+			"precursors": [],
+			"faction": "common",
+			"container":"solid"
+		},
+		{
+			"id":"scrap_metal",
+			"tier" : 1,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":10},
+				{"id":"unprocessed_scrap_metal", "cycleConsumption":1}],
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":1,
+			"cycleDuration": 60
+		},
+		{
+			"id":"allographene_fragments",
+			"tier" : 1,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":10},
+				{"id":"unprocessed_allographene_scrap", "cycleConsumption":1}],
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":1,
+			"cycleDuration": 60
+		},
+		{
+			"id":"allographene",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":6000},
+				{"id":"allographene_fragments", "cycleConsumption":300},
+				{"id":"nividium", "cycleConsumption":200}],
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":100,
+			"cycleDuration": 300
+		},
+		{
+			"id":"claytronics_scrap",
+			"tier" : 3,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":12000},
+				{"id":"scrap_metal", "cycleConsumption":300}],
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":60,
+			"cycleDuration": 300
+		},
+		{
+			"id":"hull_parts_scrap",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":3500},
+				{"id":"scrap_metal", "cycleConsumption":75}],
+			"faction": "common",
+			"container":"container",
+			"cycleProduction":200,
+			"cycleDuration": 300
+		},
+		{
+			"id":"computronic_substrate_scrap",
+			"tier" : 1,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":12500},
+				{"id":"scrap_metal", "cycleConsumption":1000}],
+			"faction": "terran",
+			"container":"container",
+			"cycleProduction":50,
+			"cycleDuration": 300
+		},
+		{
+			"id":"silicon_carbide_scrap",
+			"tier" : 2,
+			"precursors": [
+				{"id":"energy_cells", "cycleConsumption":4000},
+				{"id":"scrap_metal", "cycleConsumption":250}],
+			"faction": "terran",
+			"container":"container",
+			"cycleProduction":60,
+			"cycleDuration": 300
 		}
 	]
 }
