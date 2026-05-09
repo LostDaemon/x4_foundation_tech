@@ -790,7 +790,7 @@
 		},
 		{
 			"id":"computronic_substrate_scrap",
-			"tier" : 1,
+			"tier" : 2,
 			"precursors": [
 				{"id":"energy_cells", "cycleConsumption":12500},
 				{"id":"scrap_metal", "cycleConsumption":1000}],
